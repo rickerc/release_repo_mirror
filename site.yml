@@ -1,0 +1,14 @@
+---
+- hosts: mirror
+
+  roles:
+    - common
+    - apache
+    - { role: mirror_full_release, repo_version: '4.1.7-dev' }
+    - { role: mirror_full_release, repo_version: '4.1.6' }
+    - { role: mirror_full_release, repo_version: '4.1.5' }
+    - { role: mirror_full_release, repo_version: '4.1.4' }
+    - { role: mirror_full_release, repo_version: '4.1.3' }
+    - { role: mirror_full_release, repo_version: '4.1.2' }
+    - { role: mirror_full_release, repo_version: '4.1.1' }
+

@@ -1,0 +1,16 @@
+---
+- name: install httpd
+  become: true
+  become_user: root
+  yum:
+    name=httpd
+    update_cache=yes
+    state=latest
+
+- name: start httpd
+  become: true
+  become_user: root
+  systemd:
+    name=httpd
+    enabled=yes
+    state=started

@@ -1,0 +1,12 @@
+---
+- name: remove {{ repo_name }} {{ repo_version }} repo
+  become: true
+  become_user: root
+  yum_repository:
+    name: "{{ repo_name }}"
+    description: "{{ repo_name }}"
+    baseurl: https://pulp-staging.metacloud.com/repos/metacloud/{{ repo_version }}/{{ repo_name }}/
+    gpgcheck: yes
+    gpgkey: https://pulp-staging.metacloud.com/keyfiles/{{ repo_key }}
+    enabled: yes
+    state: absent

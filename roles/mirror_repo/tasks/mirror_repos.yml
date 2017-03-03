@@ -1,0 +1,22 @@
+---
+- name: mirror {{ repo_name }}
+  become: true
+  become_user: root
+  command:
+    reposync -p /var/www/html/repos/metacloud/{{ repo_version }}/ -r {{ repo_name }} -l -m
+
+- name: createrepo {{ repo_name }}
+  become: true
+  become_user: root
+  command:
+    createrepo /var/www/html/repos/metacloud/{{ repo_version }}/{{ repo_name }}
+
+- name: permfix {{ repo_name }}
+  become: true
+  become_user: root
+  file:
+    path: /var/www/html/repos/metacloud/{{ repo_version }}/{{ repo_name }}
+    owner: root
+    group: root
+    setype: httpd_sys_content_t
+    recurse: yes

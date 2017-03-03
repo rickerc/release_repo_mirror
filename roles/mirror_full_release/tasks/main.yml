@@ -1,0 +1,2 @@
+---
+- include: "mirror_full_release.yml"
