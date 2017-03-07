@@ -4,132 +4,150 @@
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_mc-additional_mc-additional-components'
-    repo_key: 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt' 
+    repo_key:
+      - 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt'
+      - 'RPM-GPG-KEY-TreasureData-td-agent.txt'
 
 - name: mirror core_iaas_mc-additional_mc-rebuild-dependencies
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_mc-additional_mc-rebuild-dependencies'
-    repo_key: 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt'
 
 - name: core_iaas_mc-openstack_mc-openstack
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_mc-openstack_mc-openstack'
-    repo_key: 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt' 
+    repo_key:
+      - 'RPM-GPG-KEY-cisco-core-iaas-packaging.txt' 
 
 - name: core_iaas_Percona_noarch
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_Percona_noarch'
-    repo_key: 'RPM-GPG-KEY-Percona-core-iaas-Percona.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-Percona-core-iaas-Percona.txt'
 
 - name: core_iaas_Percona_x86_64
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_Percona_x86_64'
-    repo_key: 'RPM-GPG-KEY-Percona-core-iaas-Percona.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-Percona-core-iaas-Percona.txt'
 
 - name: core_iaas_EPEL_atomic
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_EPEL_atomic'
-    repo_key: 'RPM-GPG-KEY-Atomicorp-core-iaas-EPEL-atomic.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-Atomicorp-core-iaas-EPEL-atomic.txt'
 
 - name: core_iaas_EPEL_EPEL
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_EPEL_EPEL'
-    repo_key: 'RPM-GPG-KEY-EPEL-core-iaas-EPEL-EPEL.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-EPEL-core-iaas-EPEL-EPEL.txt'
 
 - name: core_iaas_EPEL_zabbix
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'core_iaas_EPEL_zabbix'
-    repo_key: 'RPM-GPG-KEY-Zabbix-core-iaas-EPEL-zabbix.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-Zabbix-core-iaas-EPEL-zabbix.txt'
 
 - name: rhel-7-server-extras-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-extras-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-openstack-8-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-openstack-8-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-openstack-8-source-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-openstack-8-source-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-optional-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-optional-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-rhceph-1.3-mon-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-rhceph-1.3-mon-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
-# also need the f21541eb key on this osd one. tbd how
 - name: rhel-7-server-rhceph-1.3-osd-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-rhceph-1.3-osd-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-rh-common-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-rh-common-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-satellite-tools-6.1-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-satellite-tools-6.1-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-7-server-supplementary-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-7-server-supplementary-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'
 
 - name: rhel-ha-for-rhel-7-server-rpms
   include_role:
     name: mirror_repo
   vars:
     repo_name: 'rhel-ha-for-rhel-7-server-rpms'
-    repo_key: 'RPM-GPG-KEY-RH-rhel-7-server.txt'
-
+    repo_key:
+      - 'RPM-GPG-KEY-RH-rhel-7-server.txt'

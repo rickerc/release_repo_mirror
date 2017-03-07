@@ -3,7 +3,7 @@
   become: true
   become_user: root
   command:
-    reposync -p /var/www/html/repos/metacloud/{{ repo_version }}/ -r {{ repo_name }} -l -m
+    reposync -p /var/www/html/repos/metacloud/{{ repo_version }}/ -r {{ repo_name }} -l -m -g --download-metadata
 
 - name: createrepo {{ repo_name }}
   become: true

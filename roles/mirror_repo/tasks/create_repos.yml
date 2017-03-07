@@ -2,11 +2,24 @@
 - name: add {{ repo_name }} {{ repo_version }} repo
   become: true
   become_user: root
-  yum_repository:
-    name: "{{ repo_name }}"
-    description: "{{ repo_name }}"
-    baseurl: https://pulp-staging.metacloud.com/repos/metacloud/{{ repo_version }}/{{ repo_name }}/
-    gpgcheck: yes
-    gpgkey: https://pulp-staging.metacloud.com/keyfiles/{{ repo_key }}
-    enabled: yes
+  template:
+    src: etc/yum.repos.d/repo.j2
+    dest: /etc/yum.repos.d/{{ repo_name }}.repo
 
+- name: download {{ repo_name }} {{ repo_version }} GPG key
+  become: true
+  become_user: root
+  get_url:
+    url: https://pulp-staging.metacloud.com/keyfiles/{{ item }}
+    dest: /etc/pki/rpm-gpg/{{ item }}
+    owner: root
+    group: root
+    setype: cert_t
+    mode: 0644
+  with_items: "{{ repo_key }}"
+
+- name: add {{ repo_name }} {{ repo_version }} GPG key
+  become: true
+  become_user: root
+  command: rpm --import /etc/pki/rpm-gpg/{{ item }}
+  with_items: "{{ repo_key }}"

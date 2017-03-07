@@ -1,0 +1,9 @@
+# {{ ansible_managed }}
+[{{ repo_name }}]
+baseurl = https://pulp-staging.metacloud.com/repos/metacloud/{{ repo_version }}/{{ repo_name }}/
+enabled = 1
+gpgcheck = 1
+{% for item in repo_key %}
+gpgkey = https://pulp-staging.metacloud.com/keyfiles/{{ item }}
+{% endfor %}
+name = {{ repo_name }}
